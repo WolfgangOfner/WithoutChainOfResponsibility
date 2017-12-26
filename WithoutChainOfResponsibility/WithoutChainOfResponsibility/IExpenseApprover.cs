@@ -2,6 +2,6 @@
 {
     public interface IExpenseApprover
     {
-        ApprovalResponse ApprovalExpense(IExpenseReport exepnseReport);
+        ApprovalResponse ApproveExpense(IExpenseReport exepnseReport);
     }
 }

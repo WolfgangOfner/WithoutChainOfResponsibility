@@ -16,9 +16,9 @@
         public string JobTitle { get; set; }
 
 
-        public ApprovalResponse ApprovalExpense(IExpenseReport exepnseReport)
+        public ApprovalResponse ApproveExpense(IExpenseReport expenseReport)
         {
-            return exepnseReport.Total > _approvalLimit
+            return expenseReport.Total > _approvalLimit
                 ? ApprovalResponse.BeyondApprovalLimit
                 : ApprovalResponse.Approved;
         }

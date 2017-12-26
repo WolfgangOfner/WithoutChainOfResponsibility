@@ -34,14 +34,17 @@ namespace WithoutChainOfResponsibility
                     continue;
                 }
 
-                if (expenseReportAmount == -1) Environment.Exit(0);
+                if (expenseReportAmount == -1)
+                {
+                    break;
+                }
 
                 var expensesProcessed = false;
                 IExpenseReport expense = new ExpenseReport(expenseReportAmount);
 
                 foreach (var item in employees)
                 {
-                    var response = item.ApprovalExpense(expense);
+                    var response = item.ApproveExpense(expense);
 
                     if (response != ApprovalResponse.BeyondApprovalLimit)
                     {
@@ -60,6 +63,8 @@ namespace WithoutChainOfResponsibility
                     Console.ResetColor();
                 }
             }
+
+            Console.ReadKey();
         }
     }
 }
